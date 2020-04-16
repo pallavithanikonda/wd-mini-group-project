@@ -1,34 +1,40 @@
 package se.kth.sda.skeleton.posts;
 
-import java.util.List;
-import java.util.Optional;
+import org.springframework.stereotype.Service;
+import se.kth.sda.skeleton.exception.ResourceNotFoundException;
 
-/*
-    @TODO Autowire the PostRepository and use it to implement all the service methods.
- */
+import java.util.List;
+
+@Service
 public class PostService {
-    public List<Post> getAll() {
-        // @TODO get all posts and return them as List<Post>
-        return null;
+
+    private PostRepository postRepository;
+
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
     }
 
-    public Optional<Post> getByID(Long id) {
-        // @TODO get a post by ID if it exists
-        return null;
+    public List<Post> getAll() {
+        return postRepository.findAll();
+    }
+
+    public Post getByID(Long id) {
+        return postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
     }
 
     public Post save(Post post) {
-        // @TODO save the post to DB and return the saved post
-        return null;
+        return postRepository.save(post);
     }
 
-    public Optional<Post> update(Post post) {
-        // @TODO update the post if it exists in DB and return the updated post.
-        return null;
+    public Post update(Post post) {
+        if (getByID(post.getId()) != null) {
+            return postRepository.save(post);
+        } else {
+            return null;
+        }
     }
 
     public void deleteById(Long id) {
-        // @TODO delete the post by id
-        return;
+        postRepository.deleteById(id);
     }
 }

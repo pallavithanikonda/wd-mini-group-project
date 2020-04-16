@@ -1,10 +1,42 @@
 package se.kth.sda.skeleton.posts;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-/*
-    @TODO AutoWire PostService and create the methods needed to implement the API.
-    Don't forget to add necessary annotations.
- */
+import java.util.List;
+
+@RestController
+@RequestMapping("posts")
 public class PostController {
+
+
+    private PostService postService;
+
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
+
+    @GetMapping()
+    public List<Post> getAll() {
+        return postService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Post getByID(@PathVariable Long id) {
+        return postService.getByID(id);
+    }
+
+    @PostMapping()
+    public Post save(@RequestBody Post post) {
+        return postService.save(post);
+    }
+
+    @PutMapping
+    public Post update(@RequestBody Post post) {
+        return postService.update(post);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        postService.deleteById(id);
+    }
 }
