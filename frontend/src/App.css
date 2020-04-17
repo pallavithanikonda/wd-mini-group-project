@@ -25,3 +25,62 @@ body {
 .App-link {
   color: #09d3ac;
 }
+
+.deleteBtnComment {
+   color: #fff;
+   float: right;
+   background-color: #dc3545;
+   border-color: #dc3545;
+ }
+
+.deleteBtnPost {
+  color: #fff;
+  float: right;
+  background-color: #dc3545;
+  border-color: #dc3545;
+    margin-right: 5px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.commentTitle{
+    font-size: 18px;
+}
+
+.commentBody{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+img.bar-brand {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100px;
+    float: left;
+}
+img.bar-brand>img {
+    padding: 7px 14px;
+
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark{
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #6f9198;
+}
+
+.bg-lightBlue {
+    background-color: #ffff;
+}
+
+a.navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+a.nab-link{
+    color:black;
+    padding-right: 30px;
+
+}
