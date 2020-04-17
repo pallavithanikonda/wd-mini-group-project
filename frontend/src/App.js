@@ -29,6 +29,7 @@ function App() {
                     <Switch>
                         <Route path="/posts">
                             <PostsPage/>
+
                         </Route>
 
                         <Route path="/chat">
