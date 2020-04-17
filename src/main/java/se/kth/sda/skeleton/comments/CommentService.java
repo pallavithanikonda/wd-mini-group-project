@@ -41,7 +41,7 @@ public class CommentService {
             throw new ResourceNotFoundException("Comment with id" + comment.getId() + "not found");
         }
         optionalComment.get().setBody(comment.getBody());
-        return commentRepository.save(comment);
+        return commentRepository.save(optionalComment.get());
     }
 
     public void deleteById(Long commentId) {

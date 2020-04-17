@@ -30,7 +30,7 @@ public class CommentController {
     }
 
     @PutMapping
-    public void update(@RequestParam Long postId, @RequestBody Comment comment) {
-        commentService.update(postId, comment);
+    public Comment update(@RequestParam Long postId, @RequestBody Comment comment) {
+        return commentService.update(postId, comment);
     }
 }

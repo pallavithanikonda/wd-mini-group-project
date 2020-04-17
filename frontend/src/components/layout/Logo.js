@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Logo(props){
+function Logo(props) {
 
-    return(
+    return (
         <div>
-            <img class = "bar-brand" src={props.source} alt="Logo"/>
+            <img className="bar-brand" src={props.source} alt="Logo"/>
         </div>
 
     );
