@@ -8,7 +8,6 @@ import java.util.List;
 @RequestMapping("posts")
 public class PostController {
 
-
     private PostService postService;
 
     public PostController(PostService postService) {

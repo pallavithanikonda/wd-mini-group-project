@@ -1,6 +1,12 @@
 package se.kth.sda.skeleton.posts;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import se.kth.sda.skeleton.comments.Comment;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -12,10 +18,12 @@ public class Post {
 
     @Lob
     @Column(name = "body")
+    @NotEmpty(message = "Post cannot be empty")
     private String body;
 
-//    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-//    private List<Comment> comments = new ArrayList<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<>();
 
     public Post() {
     }
@@ -40,4 +48,17 @@ public class Post {
         this.body = body;
     }
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void addComment(Comment comment) {
+        this.comments.add(comment);
+        comment.setPost(this);
+    }
+
+    public void removeComment(Comment comment) {
+        this.comments.remove(comment);
+        comment.setPost(null);
+    }
 }
