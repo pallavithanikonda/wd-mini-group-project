@@ -43,6 +43,26 @@ body {
     margin-bottom: 5px;
 }
 
+.updateBtnPost {
+  color: #fff;
+  float: right;
+  background-color: #3554dc;
+  border-color: #3554dc;
+    margin-right: 5px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.showBtnPost {
+  color: #fff;
+  float: left;
+  background-color: grey;
+  border-color: grey;
+    margin-right: 5px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
 .commentTitle{
     font-size: 18px;
 }
