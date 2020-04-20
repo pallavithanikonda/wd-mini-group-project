@@ -8,7 +8,7 @@ class PostsPage extends React.Component {
         super(props);
 
         this.state = {
-            posts : []
+            posts: []
         };
     }
 
@@ -31,7 +31,7 @@ class PostsPage extends React.Component {
             let updatedPost = {};
             updatedPost.id = postID;
             updatedPost.body = updatedText;
-            
+
             const response = await PostsApi.updatePost(updatedPost);
             const post = response.data;
 
@@ -40,10 +40,6 @@ class PostsPage extends React.Component {
             this.setState({
                 posts: newPosts,
             });
-
-            document.getElementById(post.id).value = "";
-            document.getElementById(post.id).style = {display: 'none'};
-
         } catch (e) {
             console.error(e);
         }
@@ -61,11 +57,6 @@ class PostsPage extends React.Component {
         }
     }
 
-    showElement(postID) {
-        document.getElementById(postID).style = {display: 'inline'};
-    }
-
-
     componentDidMount() {
         PostsApi.getAllPosts()
             .then(({data}) => this.setState({posts: data}))
@@ -79,11 +70,9 @@ class PostsPage extends React.Component {
             <div>
                 <PostForm onSubmit={(postData) => this.createPost(postData)}/>
 
-                {posts.map(post => 
+                {posts.map(post =>
                     <PostCard key={post.id} post={post} onDeleteClick={() => this.deletePost(post)}
-                    onUpdateClick={() => this.updatePost(post.id, document.getElementById(post.id).value)}
-                    onShowClick={() => this.showElement(post.id)}
-                    />
+                              onUpdateClick={(postData) => this.updatePost(post.id, postData)}/>
                 )}
 
             </div>
