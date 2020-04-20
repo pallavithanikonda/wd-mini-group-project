@@ -5,7 +5,7 @@ function Comment({comment, onDeleteClick}) {
         <div className="card mt-3">
             <div className="card-body">
                 <h6>Comment</h6>
-                <p class ="commentBody">
+                <p className="commentBody">
                     {comment.body}
                     <button className="deleteBtnComment" onClick={onDeleteClick}>Delete</button>
                 </p>
