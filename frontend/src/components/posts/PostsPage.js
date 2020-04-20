@@ -26,6 +26,29 @@ class PostsPage extends React.Component {
         }
     }
 
+    async updatePost(postID, updatedText) {
+        try {
+            let updatedPost = {};
+            updatedPost.id = postID;
+            updatedPost.body = updatedText;
+            
+            const response = await PostsApi.updatePost(updatedPost);
+            const post = response.data;
+
+            const newPosts = this.state.posts.filter(p => p.id !== postID).concat(post);
+
+            this.setState({
+                posts: newPosts,
+            });
+
+            document.getElementById(post.id).value = "";
+            document.getElementById(post.id).style = {display: 'none'};
+
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     async deletePost(post) {
         try {
             await PostsApi.deletePost(post.id);
@@ -36,6 +59,10 @@ class PostsPage extends React.Component {
         } catch (e) {
             console.error(e);
         }
+    }
+
+    showElement(postID) {
+        document.getElementById(postID).style = {display: 'inline'};
     }
 
 
@@ -53,8 +80,12 @@ class PostsPage extends React.Component {
                 <PostForm onSubmit={(postData) => this.createPost(postData)}/>
 
                 {posts.map(post => 
-                    <PostCard key={post.id} post={post} onDeleteClick={() => this.deletePost(post)}/>
+                    <PostCard key={post.id} post={post} onDeleteClick={() => this.deletePost(post)}
+                    onUpdateClick={() => this.updatePost(post.id, document.getElementById(post.id).value)}
+                    onShowClick={() => this.showElement(post.id)}
+                    />
                 )}
+
             </div>
         );
     }
