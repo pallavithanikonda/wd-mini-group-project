@@ -13,8 +13,8 @@ class CommentsApi {
         return Api.post('/comments?postId=' + postId, comment);
     }
 
-    updateComment(comment) {
-        return Api.put('/comments', comment);
+    updateComment(comment, postId) {
+        return Api.put('/comments?postId=' + postId, comment);
     }
 
     deleteComment(id) {
