@@ -7,14 +7,14 @@ class LoginPage extends Component {
     async login(loginData) {
         const loginSuccess = await Auth.login(loginData);
         if (!loginSuccess) {
-            alert("Invalid credentials");
+            alert("Invalid credentials. Try again");
         }
     }
 
     async register(registrationData) {
         const registerSuccess = await Auth.register(registrationData);
         if (!registerSuccess) {
-            alert("Couldn't register check credentials and try again");
+            alert("Oops! Please check credentials and try again");
         }
     }
 
@@ -24,10 +24,9 @@ class LoginPage extends Component {
                 <div className="container">
                     <div className="row mt-4">
                         <div className="col-md-6 " style={{color: "white"}}>
-                            <h1>SDA</h1>
-                            <p>Starter template</p>
+                            <h1>Quaranchat</h1>
+                            <p> Login if you are bored</p>
                         </div>
-
                         <div className="col-md-6">
                             <div className="row">
                                 <div className="col-12  strong-shadow">
