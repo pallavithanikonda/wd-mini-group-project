@@ -38,7 +38,24 @@ class CommentList extends React.Component {
         }
     }
 
+    async updateComment(commentID, commentData) {
+        try {
+            let updatedComment = {};
+            updatedComment.id = commentID;
+            updatedComment.body = commentData;
 
+            const response = await CommentsApi.updateComment(updatedComment);
+            const post = response.data;
+
+            const newComments = this.state.comment.filter(p => p.id !== commentID).concat(post);
+
+            this.setState({
+                posts: newComments,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    }
     componentDidMount() {
         CommentsApi.getCommentByPostId(this.props.postId)
             .then(({data}) => this.setState({comments: data}))
@@ -51,9 +68,9 @@ class CommentList extends React.Component {
         return (
             <div>
                 <CommentForm onSubmit={(commentData) => this.createComment(commentData)}/>
-
                 {comments.map(comment =>
-                    <Comment key={comment.id} comment={comment} onDeleteClick={() => this.deleteComment(comment)}/>
+                    <Comment key={comment.id} comment={comment} onDeleteClick={() => this.deleteComment(comment)}
+                    onUpdateClick={(commentData) => this.updateComment(comment.id, commentData)} />
                 )}
             </div>
         );

@@ -5,14 +5,17 @@ class HomePage extends Component {
         return (
             <div className="card">
                 <div className="card-body">
-                    <h4 className="card-title">SDA starter template</h4>
-                    <p>This starter template is based on Spring, PostgreSQL, React, React router and Axios. Check the following links for documentation and guides:</p>
+                    <h2 className="card-title" style={{ color: 'Green',fontWeight: 'bold' }}>Quranchat </h2>
+                    <p><b>Quranchat is an online forum to help people communicate effectively during life changing events such
+                    as quarantines, recessions and unprecedented events that make people stay home and wear out.
+                    We allow our users to create, delete, view posts and comments. Here we encourage users to share ideas,
+                    thoughts, inspirations to kill time and fight boredom:</b></p>
+                    <p><b>Currently the world is suffering with Corona here is more information about Corona and important links: </b></p>
                     <ul>
-                        <li><a href="https://spring.io/projects/spring-boot">Spring</a></li>
-                        <li><a href="https://www.postgresql.org">PostgreSQL</a></li>
-                        <li><a href="https://reactjs.org">React</a></li>
-                        <li><a href="https://reacttraining.com/react-router/web/guides/quick-start">React Router</a></li>
-                        <li><a href="https://github.com/axios/axios">Axios</a></li>
+                        <li><a href="https://www.who.int/">World Health Organization: WHO</a></li>
+                        <li><a href="https://www.worldometers.info/coronavirus/">Corona Status</a></li>
+                        <li><a href="https://www.folkhalsomyndigheten.se/the-public-health-agency-of-sweden/">Swedish public health agency</a></li>
+
                     </ul>
                 </div>
             </div>

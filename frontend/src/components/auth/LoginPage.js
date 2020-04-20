@@ -23,9 +23,9 @@ class LoginPage extends Component {
             <div className="wrapper">
                 <div className="container">
                     <div className="row mt-4">
-                        <div className="col-md-6 " style={{color: "white"}}>
-                            <h1>SDA</h1>
-                            <p>Starter template</p>
+                        <div className="col-md-6 " style={{color: "Pink"}}>
+                            <h1><b>Quranchat</b></h1>
+                            <p><h3><i> World's Covid-19 Time</i></h3></p>
                         </div>
 
                         <div className="col-md-6">
