@@ -1,6 +1,6 @@
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #3498db);
+  background: linear-gradient(to right, #7F7FD5,#86A8E7,#91eae4);
 }
 
 .App {
@@ -100,7 +100,6 @@ a.navbar-brand{
 }
 
 a.nab-link{
-    color:black;
+    color:royalblue;
     padding-right: 30px;
-
 }
