@@ -33,6 +33,18 @@ body {
    border-color: #dc3545;
  }
 
+.updateBtnComment {
+    color: #fff;
+    float: right;
+    background-color: #3554dc;
+    border-color: #dc3545;
+    margin-right: 5px;
+}
+
+.div.card-body{
+    background-color: purple;
+}
+
 .deleteBtnPost {
   color: #fff;
   float: right;
@@ -90,6 +102,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark{
     background: #6f9198;
 }
 
+
 .bg-lightBlue {
     background-color: #ffff;
 }
@@ -103,4 +116,18 @@ a.nab-link{
     color:black;
     padding-right: 30px;
 
+}
+
+body {
+    background-image: url("https://www.regionofwaterloo.ca/en/health-and-wellness/resources/Images/nCoV1600x642.png");
+    position: relative;
+    opacity: 0.95;
+}
+
+.card-body:hover{
+    opacity: 1.0;
+}
+
+.card-body{
+    opacity: 0.9;
 }
