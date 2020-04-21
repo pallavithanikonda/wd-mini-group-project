@@ -26,7 +26,7 @@ class LoginPage extends Component {
                         <div className="col-md-6 " style={{color: "white"}}>
                             <h1>Quaranchat</h1>
                             <p> Login if you are bored</p>
-                            <img src={require('./logo002.png')} width="300" height="300"></img>
+                            <img src={require('./logo002.png')} width="300" height="300" alt="logo"></img>
                         </div>
                         <div className="col-md-6">
                             <div className="row">
