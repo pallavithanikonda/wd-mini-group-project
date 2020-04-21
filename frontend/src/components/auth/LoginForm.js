@@ -14,7 +14,7 @@ function LoginForm({onSubmit}) {
                         <input 
                             type="email"
                             className="form-control"
-                            placeholder="Email"
+                            placeholder="Enter your email"
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
                     </div>
@@ -23,7 +23,7 @@ function LoginForm({onSubmit}) {
                         <label>Password:</label>
                         <input 
                             type="password" 
-                            placeholder="Password" 
+                            placeholder="Enter your password" 
                             className="form-control" 
                             value={password}
                             onChange={e => setPassword(e.target.value)} />
@@ -31,7 +31,7 @@ function LoginForm({onSubmit}) {
 
                     <div className="form-group">
                         <button 
-                            className="btn btn-info" 
+                            className="btn btn-primary" 
                             onClick={() => onSubmit({email, password})}>
                             Login
                         </button>

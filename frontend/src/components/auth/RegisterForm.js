@@ -17,7 +17,7 @@ function RegisterForm({onSubmit}) {
                             className="form-control"
                             value={name}
                             onChange={ e => setName(e.target.value) }
-                            placeholder="Name"/>
+                            placeholder="Enter your name"/>
                     </div>
 
                     <div className="form-group">
@@ -27,14 +27,14 @@ function RegisterForm({onSubmit}) {
                             value={email}
                             onChange={ e => setEmail(e.target.value) }
                             className="form-control"
-                            placeholder="Email"/>
+                            placeholder="Enter your email"/>
                     </div>
 
                     <div className="form-group">
                         <label>Password:</label>
                         <input 
                             type="password" 
-                            placeholder="Password" 
+                            placeholder="Enter your password" 
                             className="form-control" 
                             value={password}
                             onChange={e => setPassword(e.target.value)} />
@@ -42,7 +42,7 @@ function RegisterForm({onSubmit}) {
 
                     <div className="form-group">
                         <button 
-                            className="btn btn-success"
+                            className="btn btn-primary"
                             onClick={e => onSubmit({name, email, password})}>
                             Create account
                         </button>
